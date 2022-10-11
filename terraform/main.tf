@@ -42,3 +42,9 @@ resource "azurerm_linux_web_app" "this" {
     }
   }
 }
+
+resource "azurerm_app_service_source_control" "this" {
+  app_id   = azurerm_linux_web_app.this.id
+  repo_url = "hhttps://github.com/SimonTham/DeploymentUsingIAC.git"
+  branch   = "main"
+}
